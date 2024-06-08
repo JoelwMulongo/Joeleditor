@@ -6,55 +6,89 @@
     android:background="@color/purple_200"
     tools:context=".MainActivity">
 
+    <!-- Toolbar -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/purple_500"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_code"
+            android:tint="@android:color/white"
+            android:contentDescription="Logo"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joeleditor"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Editor Area -->
     <EditText
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="-5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/white"
-        android:fontFamily="monospace"
         android:gravity="top"
         android:hint="Start coding..."
         android:inputType="textMultiLine"
-        android:padding="10dp"
         android:scrollbars="vertical"
-        android:textColor="@android:color/black" />
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:padding="16dp"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="60dp"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="16dp"
+        android:elevation="4dp"
+        android:textSize="16sp"/>
 
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"/>
+        android:background="@color/purple_500"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/open_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/save_button"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"/>
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"/>
 
-    <Button
-        android:id="@+id/run_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Run"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/open_button"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"/>
+        <Button
+            android:id="@+id/open_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Open"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/run_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Run"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
 
 </RelativeLayout>
